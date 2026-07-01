@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book of Dragons</title>
+  <meta name="description" content="Most dragon species from the How to Train Your Dragon movies, Riders of Berk, Defenders of Berk, Race to the Edge, and the specials." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('jdkcube-theme');
+      if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body class="dragons-body">
+
+  <div class="dragons-bg-grid"></div>
+  <div class="dragons-glow"></div>
+
+  <a class="dragons-back" href="https://judokacube.github.io">← main site</a>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light / dark mode">
+    <span class="theme-icon theme-icon-moon">🌙</span>
+    <span class="theme-icon theme-icon-sun">☀️</span>
+  </button>
+
+  <main class="dragons-page">
+
+    <header class="dragons-hero fade-in">
+      <img class="dragons-logo" src="assets/dragon-logo.png" alt="Book of Dragons logo" />
+      <span class="dragons-eyebrow">a collection of httyd species</span>
+      <h1 class="dragons-title">Book of Dragons</h1>
+      <p class="dragons-desc">most species from the movies, Riders of Berk, Defenders of Berk, Race to the Edge &amp; the specials</p>
+    </header>
+
+    <!-- ░░ SEARCH + FILTER BAR ░░ -->
+    <div class="dragons-toolbar fade-in">
+      <div class="dragons-search-row">
+        <span class="dragons-search-icon">🔍</span>
+        <input
+          type="text"
+          id="dragonsSearch"
+          class="dragons-search-input"
+          placeholder="search a dragon, class, or where it appears…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <span class="dragons-search-count" id="dragonsCount"></span>
+        <button class="dragons-random-btn" id="dragonsRandomBtn" type="button" title="Show me a random dragon">
+          <span class="dragons-random-icon">🎲</span> Random
+        </button>
+      </div>
+
+      <div class="dragons-filter-row" id="dragonsFilterRow">
+        <button class="dragons-filter-chip active" data-class="all">All classes</button>
+        <!-- class chips injected here -->
+      </div>
+
+      <div class="dragons-sort-row">
+        <span class="dragons-sort-label">Sort by</span>
+        <div class="dragons-sort-options" id="dragonsSortRow">
+          <button class="dragons-sort-chip active" data-sort="alpha">Alphabetical</button>
+          <button class="dragons-sort-chip" data-sort="appears">Movie / show</button>
+          <button class="dragons-sort-chip" data-sort="class">Class</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ░░ DRAGON GRID ░░ -->
+    <div class="dragons-grid" id="dragonsGrid"></div>
+
+    <p class="dragons-empty" id="dragonsEmpty" hidden>no dragons match that search</p>
+
+    <footer class="dragons-footer">
+      <span>156 species and counting · images coming soon</span>
+    </footer>
+
+  </main>
+
+  <!-- ░░ RANDOM DRAGON SPOTLIGHT ░░ -->
+  <div class="dragons-spotlight-backdrop" id="dragonsSpotlightBackdrop" hidden>
+    <div class="dragons-spotlight" id="dragonsSpotlight" role="dialog" aria-modal="true" aria-label="Random dragon">
+      <button class="dragons-spotlight-close" id="dragonsSpotlightClose" aria-label="Close">✕</button>
+      <div class="dragons-spotlight-body" id="dragonsSpotlightBody"></div>
+      <button class="dragons-spotlight-again" id="dragonsSpotlightAgain">🎲 Roll again</button>
+    </div>
+  </div>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
